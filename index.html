@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Frame v6</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #050507; overflow: hidden; }
+    canvas { display: block; position: fixed; inset: 0; width: 100%; height: 100%; }
+    video { position: fixed; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    #status {
+      position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+      font: 400 13px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .02em;
+      color: rgba(255,255,255,.62); transition: opacity .9s ease; pointer-events: none;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6); white-space: nowrap;
+    }
+    #status.hide { opacity: 0; }
+  </style>
+</head>
+<body>
+  <video id="cam" playsinline muted autoplay></video>
+  <canvas id="gl"></canvas>
+  <div id="status">Allow camera access to begin</div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
